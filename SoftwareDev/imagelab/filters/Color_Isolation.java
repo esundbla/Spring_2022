@@ -1,9 +1,11 @@
 package filters;
 import java.util.*;
 
+import imagelab.ImageFilter;
 import imagelab.ImgProvider;
 
-public class Color_Isolation {
+public class Color_Isolation implements ImageFilter {
+   
     /**
      * The filtered image.
      */
@@ -19,7 +21,13 @@ public class Color_Isolation {
         short[][] green = ip.getGreen();
         short[][] blue = ip.getBlue();
         short[][] blank = blue;
-        Arrays.fill(blank, 0);
+        short zed = 0;
+
+        for(int i =0; i< blank.length; i++){
+          for(int r=0; r< blank[i].length; r++){
+            blank[i][r] = zed;
+          }
+        }
 
         filteredImage.setColors(blank, green, blue, ip.getAlpha());
         filteredImage.showPix("No red");
@@ -48,6 +56,6 @@ public class Color_Isolation {
      * @return the filter's menu item label
      */
     public String getMenuLabel() {
-        return "Color_Isolation";
+        return "Color_Iso";
     } //getMenuLabel
 }

@@ -29,14 +29,15 @@ public class Color_Isolation implements ImageFilter {
           }
         }
 
+        filteredImage = new ImgProvider();
         filteredImage.setColors(blank, green, blue, ip.getAlpha());
         filteredImage.showPix("No red");
 
-        //filteredImage.setColors(red, blank, blue, ip.getAlpha());
-        //filteredImage.showPix("No green");
+        filteredImage.setColors(red, blank, blue, ip.getAlpha());
+        filteredImage.showPix("No green");
 
-        //filteredImage.setColors(red, green, blank, ip.getAlpha());
-        //filteredImage.showPix("No blue");
+        filteredImage.setColors(red, green, blank, ip.getAlpha());
+        filteredImage.showPix("No blue");
 
 
 

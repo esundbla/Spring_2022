@@ -1,4 +1,5 @@
 package filters;
+import java.util.*;
 
 import imagelab.ImgProvider;
 
@@ -14,6 +15,22 @@ public class Color_Isolation {
      * @param ip the image to be filtered.
      */
     public void filter(final ImgProvider ip){
+        short[][] red = ip.getRed();
+        short[][] green = ip.getGreen();
+        short[][] blue = ip.getBlue();
+        short[][] blank = blue;
+        Arrays.fill(blank, 0);
+
+        filteredImage.setColors(blank, green, blue, ip.getAlpha());
+        filteredImage.showPix("No red");
+
+        filteredImage.setColors(red, blank, blue, ip.getAlpha());
+        filteredImage.showPix("No green");
+
+        filteredImage.setColors(red, green, blank, ip.getAlpha());
+        filteredImage.showPix("No blue");
+
+
 
     }
 

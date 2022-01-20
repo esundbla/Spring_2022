@@ -9,7 +9,7 @@ public class Color_Isolation implements ImageFilter {
     /**
      * The filtered image.
      */
-    private ImgProvider filteredImage;
+    ImgProvider filteredImage;
 
     /**
      * The filter itself.
@@ -21,7 +21,7 @@ public class Color_Isolation implements ImageFilter {
         short[][] green = ip.getGreen();
         short[][] blue = ip.getBlue();
         short[][] blank = blue;
-        short zed = 0;
+        short zed = 1;
 
         for(int i =0; i< blank.length; i++){
           for(int r=0; r< blank[i].length; r++){
@@ -32,11 +32,11 @@ public class Color_Isolation implements ImageFilter {
         filteredImage.setColors(blank, green, blue, ip.getAlpha());
         filteredImage.showPix("No red");
 
-        filteredImage.setColors(red, blank, blue, ip.getAlpha());
-        filteredImage.showPix("No green");
+        //filteredImage.setColors(red, blank, blue, ip.getAlpha());
+        //filteredImage.showPix("No green");
 
-        filteredImage.setColors(red, green, blank, ip.getAlpha());
-        filteredImage.showPix("No blue");
+        //filteredImage.setColors(red, green, blank, ip.getAlpha());
+        //filteredImage.showPix("No blue");
 
 
 

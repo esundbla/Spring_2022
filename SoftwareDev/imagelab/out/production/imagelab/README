@@ -1,0 +1,26 @@
+OBJECTIVE
+ImageLab is a framework and application that allows student programmers
+to develop image modification processors (filters) and to experience
+the results visually and aurally.
+
+The project uses Java as the programming language.
+
+Images are preprocessed into 2-Dimensional arrays of pixels, corresponding to:
+a RED channel (intensity of the color red associated with each pixel)
+a GREEN channel (intensity of the color green associated with each pixel)
+a BLUE channel (intensity of the color blue associated with each pixel)
+a BW channel (intensity in greyscale values associated with each pixel)
+an ALPHA channel (the amount of transparency associated each pixel)
+
+An example of accessing and using those channels can be found in: filters/Generic.java
+---
+CONTENT ORGANIZATION
+The ImageLab application is bundled in the jar file: imagelab.jar
+Sample images are provided in the subdirectory named: images
+Examples of image filter source code are provided in the subdirectory named: filters
+---
+HOW TO USE
+Create Java source code for a new image filter based on the sample filter(s) provided.
+Put the new filter's source code into the subdirectory named: filters
+Compile filters using command: javac -cp .:imagelab.jar filters/*.java
+Run ImageLab using command: java -cp .:imagelab.jar Run

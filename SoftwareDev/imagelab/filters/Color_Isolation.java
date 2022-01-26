@@ -4,6 +4,13 @@ import java.util.*;
 import imagelab.ImageFilter;
 import imagelab.ImgProvider;
 
+/**
+ * An imageLab filter to shut off 1 at a time each color channel RGB
+ * then display resulting image lacking chose channel
+ *
+ * @author Erik Sundblad
+ * @author Dr. Jody Paul
+ */
 public class Color_Isolation implements ImageFilter {
    
     /**

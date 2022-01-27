@@ -6,7 +6,7 @@ import imagelab.ImgProvider;
 
 /**
  * An imageLab filter to shut off 1 at a time each color channel RGB
- * then display resulting image lacking chose channel
+ * then display resulting image lacking the said channel
  *
  * @author Erik Sundblad
  * @author Dr. Jody Paul

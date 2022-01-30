@@ -5,6 +5,14 @@ def mean(numb):
     mean = sum(numb)/len(numb)
     return mean
 
+def sampleVar(numb):
+    sampleMean = mean(numb)
+    squares = []
+    for smp in numb:
+        squares.append((smp - sampleMean)**2)
+    #print(squares)
+    return (sum(squares))/(len(numb)-1)
+
 
 def main():
     while(True):
@@ -12,7 +20,7 @@ def main():
         if numbers.__contains__("\t"):
             numb = numbers.split("\t")
         else:
-            numb = numbers.split(",")
+            numb = numbers.split(" ")
         nlist = []
         for items in numb:
             if items.__contains__(','):
@@ -21,8 +29,11 @@ def main():
 
         nlist.sort()
         print(nlist)
-        myMean = mean(nlist)
-        if len(nlist) % 2 == 0:
+        sampleV = sampleVar(nlist)
+        print('Sample Variance:', sampleV, '\nStandard Deviation:', math.sqrt(sampleV))
+
+
+        """if len(nlist) % 2 == 0:
             median = (nlist[(len(nlist)//2)] + nlist[(len(nlist)//2)-1])/2
         else:
             median = nlist[(len(nlist)//2)]
@@ -35,7 +46,7 @@ def main():
         meanHig = mean(nlist[(high):(len(nlist) - high)])
         trimMean = (meanLow + meanHig)/2
 
-        print("Trinm mean:", trimMean)
+        print("Trinm mean:", trimMean)"""
 
         run = input("Run again? Y/N ")
         if run == 'N':

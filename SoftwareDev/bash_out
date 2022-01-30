@@ -1,0 +1,6 @@
+Linux 5.13.0-27-generic #29-Ubuntu SMP Wed Jan 12 17:36:47 UTC 2022
+cat hello.py
+print("Hello World")
+python3 hello.py
+Hello World
+

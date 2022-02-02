@@ -28,7 +28,7 @@ public class Color_Isolation implements ImageFilter {
         short[][] green = ip.getGreen();
         short[][] blue = ip.getBlue();
         short[][] blank = blue;
-        short zed = 1;
+        short zed = 0;
 
         for(int i =0; i< blank.length; i++){
           for(int r=0; r< blank[i].length; r++){

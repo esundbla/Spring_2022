@@ -30,16 +30,17 @@ def main():
         nlist.sort()
         print(nlist)
         sampleV = sampleVar(nlist)
+        print("Mean:", mean(nlist))
         print('Sample Variance:', sampleV, '\nStandard Deviation:', math.sqrt(sampleV))
 
 
-        """if len(nlist) % 2 == 0:
+        if len(nlist) % 2 == 0:
             median = (nlist[(len(nlist)//2)] + nlist[(len(nlist)//2)-1])/2
         else:
             median = nlist[(len(nlist)//2)]
-        print("Mean =", myMean, "Median=", median)
+        print("Median=", median)
 
-        trimPerc = float(input("Trim percent: "))
+        """trimPerc = float(input("Trim percent: "))
         low = (len(nlist) * trimPerc).__floor__()
         high = (len(nlist) * trimPerc).__ceil__()
         meanLow = mean(nlist[(low):(len(nlist) - low)])

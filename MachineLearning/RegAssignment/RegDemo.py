@@ -16,14 +16,14 @@ def sumation(H, Y, zed):
 
 
 if __name__ == "__main__":
-    samples = [3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8]
+    samples = [1, 3.5, 2, 15, 7, 9.6, 6, 6.5, 7, 7.5, 8]
     results = []
     for sam in samples:
         results.append((2*sam)+50+(3*random.random()))
 
     w1 = 1.0
     b = 1.0
-    step = 0.00001
+    step = 0.0001
 
     for i in range(10000000):
         h = []

@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68f9f5f5-fdb2-4c93-9057-0a5b0eeeb69e" name="Changes" comment="Small fixes" />
+    <list default="true" id="68f9f5f5-fdb2-4c93-9057-0a5b0eeeb69e" name="Changes" comment="Small fixes">
+      <change afterPath="$PROJECT_DIR$/RegAssignment/Assingment_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RegAssignment/RegDemo.py" beforeDir="false" afterPath="$PROJECT_DIR$/RegAssignment/RegDemo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SoftwareDev/imagelab/out/production/imagelab/filters/Color_Isolation.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SoftwareDev/imagelab/out/production/imagelab/filters/Color_Isolation.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +37,27 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="Python.RegDemo">
+    <configuration name="Assingment_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MachineLearning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RegAssignment" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RegAssignment/Assingment_1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="RegDemo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MachineLearning" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -76,11 +102,13 @@
     </configuration>
     <list>
       <item itemvalue="Python.Unnamed" />
+      <item itemvalue="Python.Assingment_1" />
       <item itemvalue="Python.RegDemo" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.RegDemo" />
+        <item itemvalue="Python.Assingment_1" />
       </list>
     </recent_temporary>
   </component>

@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68f9f5f5-fdb2-4c93-9057-0a5b0eeeb69e" name="Changes" comment="Small fixes">
-      <change afterPath="$PROJECT_DIR$/RegAssignment/Assingment_1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RegAssignment/RegDemo.py" beforeDir="false" afterPath="$PROJECT_DIR$/RegAssignment/RegDemo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SoftwareDev/imagelab/out/production/imagelab/filters/Color_Isolation.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SoftwareDev/imagelab/out/production/imagelab/filters/Color_Isolation.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

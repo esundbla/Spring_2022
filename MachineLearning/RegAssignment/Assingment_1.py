@@ -16,3 +16,5 @@ for i in range(len(bb)):
         for n in range(len(x_data)):
             Z[j][i] = Z[j][i] + (w * x_data[n] + b - y_data[n]) ** 2  # this is the loss
         Z[j][i] = Z[j][i] / len(x_data)
+plt.contour(ww, bb, Z, 700, alpha =0.5, cmap = plt.get_cmap('jet'))
+plt.show()

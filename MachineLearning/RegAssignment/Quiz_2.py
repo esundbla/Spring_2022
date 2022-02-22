@@ -5,6 +5,7 @@ import random
 
 
 if __name__ == "__main__":
+    reg = sklearn.LinearRegression()
     x_val = []
     y_val = []
     for i in range(500):

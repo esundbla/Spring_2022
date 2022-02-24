@@ -20,4 +20,6 @@ if __name__ == "__main__":
     y_train = y_val[0:300]
     y_test = y_val[300:]
     print(x_val, "\n", y_val)
-    plt.plot(x_val, y_val,lw=2, label='linear', color= 'Red');
+    plt.plot(x_val, y_val,lw=2, label='linear', color= 'Red')
+
+

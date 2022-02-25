@@ -47,7 +47,7 @@ CREATE TABLE Sections(
 -- TODO: manually insert a few instructors
 INSERT INTO Instructors (email, name, title, office, hours) VALUES 
     ('danbrown@csu.edu', 'Dan Brown', 'Doctor', 'SCI255', 'M 08:00AM-09:30AM'),
-    ('JoeRamos@csu.edu', 'Joe Ramos', 'Professor.', 'CYB100', 'TR 001:00PM-03:30PM'),
+    ('JoeRamos@csu.edu', 'Joe Ramos', 'Professor', 'CYB100', 'TR 01:00PM-03:30PM'),
     ('sarahRamos@csu.edu', 'Sarah Ramos', 'Doctor', 'BIO115', 'MWF 12:00PM-02:30AM');
 
 -- TODO: manually insert a few courses
@@ -65,13 +65,13 @@ INSERT INTO Sections (crn, prefix, number, section, semester, year, instructor, 
     
 
 -- TODO: the total number of courses (name the count as "total")
-
+ SELECT COUNT(*) AS Total  FROM courses;
 -- TODO: a list of all courses prefix, number, and title, sorted by prefix and then number
-
+ SELECT prefix, number, title FROM courses ORDER BY prefix;
 -- TODO: an alphabetical list of all instructors in the database
-
+ SELECT name FROM Instructors ORDER BY name;
 -- TODO: the prefix, number, section, and (course) title of all courses sections in the database, sorted by prefix, number and section
-
+ SELECT A.prefix, A.number, A.number, B.section FROM Courses A, Sections B WHERE A.prefix = B.prefix ORDER BY A.prefix;
 -- TODO: the prefix, number, the number of sections (named as "sections"), and (course) title of all courses sections in the database, sorted by prefix and number
 
 -- TODO: an alphabetical list of the instructors that are teaching CS 1050 or CS 2050 (must avoid showing names repeated)

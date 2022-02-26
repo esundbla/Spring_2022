@@ -1,0 +1,35 @@
+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
+
+https://github.com/esundbla/ourfavorites.git
+erik@erik-VirtualBox:~$ curl http://localhost:3000/notes
+[
+  {
+    "id": 1,
+    "title": "Hello"
+  },
+  {
+    "id": 2
+  },
+  {
+    "id": 3
+  },
+  {
+    "id": 4
+  },
+  {
+    "title": "This is another note",
+    "id": 5
+  }
+]erik@erik-VirtualBox:~$ curl -X POST http://localhost:3000/notes -H 'Content-type: application/json' -d '{"title": "This is another note"}' 
+erik@erik-VirtualBox:~$ ip addr | grep inet | grep -v inet6
+    inet 127.0.0.1/8 scope host lo
+    inet 10.0.2.15/24 brd 10.0.2.255 scope global dynamic noprefixroute enp0s3
+PS C:\Windows\system32> ssh erik@192.168.56.101
+The authenticity of host '192.168.56.101 (192.168.56.101)' can't be established.
+ECDSA key fingerprint is SHA256:+JDPwOlCOgLVBSwZImICtdqIRHsNxZbMGrjshEbNryc.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? y
+Please type 'yes', 'no' or the fingerprint: yes
+Warning: Permanently added '192.168.56.101' (ECDSA) to the list of known hosts.
+erik@192.168.56.101's password:
+<...>
+erik@erik-VirtualBox:~$

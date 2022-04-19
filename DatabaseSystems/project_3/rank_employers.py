@@ -1,11 +1,11 @@
 '''
 CS3810 - Principles of Database Systems - Spring 2022
 Instructor: Thyago Mota
-Student Names:
+Student Names: Erik Sundblad
 Description: show recommendation scores for student-employer matching based on common interests
 '''
 
-from curses.ascii import EM
+
 from sqlalchemy.ext.declarative import declarative_base  
 from sqlalchemy import Column, String, Integer, Boolean, create_engine, ForeignKey
 from sqlalchemy.orm import sessionmaker, relationship
@@ -17,7 +17,7 @@ def jaccard(student, employer):
     for studentInterest in student.interests: 
         found = False 
         for employerInterest in employer.interests: 
-            if studentInterest.interest == employerInterest.interest: 
+            if studentInterest.abr == employerInterest.abr:
                 found = True
                 break
         if found:
@@ -39,4 +39,6 @@ if __name__ == "__main__":
     print(student)
 
     # TODO: matching of the student to each employer
-    
+    employers = session.query(Employer)
+    for employer in employers:
+        print(str(employer) + ':' + str(round(jaccard(student, employer), 2)))

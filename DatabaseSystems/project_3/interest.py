@@ -7,7 +7,7 @@ Description: creates Interest entity and allows listing of all interests
 
 from sqlalchemy.ext.declarative import declarative_base  
 from sqlalchemy import Column, String, Integer, create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, relationship
 
 Base = declarative_base()
 

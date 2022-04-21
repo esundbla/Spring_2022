@@ -36,9 +36,13 @@ class StudentInterest(Base):
 
     email = Column(String, ForeignKey('Students.email'), primary_key=True)
     abr = Column(String, ForeignKey('Interests.abr'), primary_key=True)
+    students = relationship('Student', primaryjoin='StudentInterest.email==Student.email')
 
     def __str__(self):
         s = self.abr
+        """for val in self.students.name:
+            s += str(val) + ', '
+        s += '\b\b]'"""
         return s
 
 
@@ -51,7 +55,7 @@ if __name__ == "__main__":
     session = Session()
 
     # TODO: list all students
-    stu = session.query(Student)
+    stu = session.query(StudentInterest)
     for s in stu:
         print(s)
     

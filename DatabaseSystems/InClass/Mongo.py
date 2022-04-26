@@ -4,10 +4,10 @@ from pymongo import MongoClient
 
 connectionString="mongodb+srv://sinbad:SunWood4117@cluster0.tz6ko.mongodb.net/blog?retryWrites=true&w=majority"
 cluster = MongoClient(connectionString)
-db = cluster["blog"]
-collection = db["posts"]
+db = cluster["books"]
+collection = db["books"]
 
-"""collection.insert_many([
+collection.insert_many([
 
 {
 	"author" : "Sam Mai Tai",
@@ -48,9 +48,9 @@ collection = db["posts"]
 		"life",
 		"optimist"
 	]
-}])"""
+}])
 
-for post in collection.find():
+"""for post in collection.find():
 	print(post )
 print('\n\n')
 for results in collection.find({"author":{"$regex":'o$'}}):
@@ -59,3 +59,4 @@ print('\n\n')
 for results in collection.find({"content":{"$regex":'you'}}):
 	print(results)
 print('\n\n')
+"""

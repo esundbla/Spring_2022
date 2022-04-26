@@ -4,8 +4,8 @@ from pymongo import MongoClient
 
 connectionString="mongodb+srv://sinbad:SunWood4117@cluster0.tz6ko.mongodb.net/blog?retryWrites=true&w=majority"
 cluster = MongoClient(connectionString)
-db = cluster["books"]
-collection = db["books"]
+db = cluster["blog"]
+collection = db["post"]
 
 collection.insert_many([
 

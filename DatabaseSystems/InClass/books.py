@@ -2,12 +2,13 @@ from pymongo import MongoClient
 
 
 
-connectionString="mongodb+srv://sinbad:SunWood4117@cluster0.tz6ko.mongodb.net/blog?retryWrites=true&w=majority"
+connectionString="mongodb+srv://sinbad:SunWood4117@cluster0.tz6ko.mongodb.net/books?retryWrites=true&w=majority"
+#C_string_2 = "mongodb+srv://sinbad:SunWood4117@cluster0.tz6ko.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 cluster = MongoClient(connectionString)
 db = cluster["books"]
 collection = db["books"]
 
-
+"""
 collection.insert_many([
 	{
 		"isbn" : 978157965,
@@ -15,6 +16,7 @@ collection.insert_many([
 		"Author" : "Thomas Keller",
 		"date" : {"year": 1999,
 				  "month": "September"},
+		"pages": 562,
 		"tags" : [
 			"Cooking"
 		]
@@ -24,6 +26,7 @@ collection.insert_many([
 		"Author" : "Christopher Kostow",
 		"date" : {"year": 2014,
 				 "month": "June"},
+		"pages": 97,
 		"tags": [
 			"Cooking"]
 	},{
@@ -32,6 +35,7 @@ collection.insert_many([
 		"Author" : "Fergus Henderson",
 		"date" : {"year": 2004,
 				  "month": "May"},
+		"pages": 127,
 		"tags" : [
 			"Cooking"
 		]
@@ -41,6 +45,7 @@ collection.insert_many([
 		"Author" : "Dustin Clingman",
 		"date" : {"year": 2004,
 				  "month": "February"},
+		"pages": 425,
 		"tags" : [
 			"Programming"
 		]
@@ -50,10 +55,36 @@ collection.insert_many([
 		"Author" : "Frank Herbert",
 		"date" : {"year": 1984,
 				  "month": "August"},
+		"pages": 387,
 		"tags" : [
 			"Sci-fi"
 		]
 	},
-])
+])"""
+
 for books in collection.find():
+	print(books)
+
+print('*'*15)
+
+for books in collection.find( {'title': {"$regex": ".*"}}, {'title': 1, '_id': 0}):
+	print(books)
+
+print('*'*15)
+
+for books in collection.find({'Author' : 'Thomas Keller'},
+		{'title':1, "_id":0, "Author":1}):
+	print(books)
+
+print('*'*15)
+
+for books in collection.find({'date.year':2004},
+		{'title':1, "_id":0, "date.year":1}):
+	print(books)
+
+print('*'*15)
+
+for books in collection.find({'$and': [
+		{'pages':{'$gte':100}}, {'pages':{"$lte":500}}]},
+		{'title':1, "_id":0, "pages":1}):
 	print(books)

@@ -9,15 +9,53 @@ collection = db["books"]
 
 
 collection.insert_many([
-{
-	"isbn" : 123456,
-	"title" : "The French Laundry",
-	"Author" : "Thomas Keller",
-	"date" : {"year": 1997,
-			  "month": "September"},
-	"tags" : [
-		"Cooking"
-	]
-}])
+	{
+		"isbn" : 123456,
+		"title" : "The French Laundry",
+		"Author" : "Thomas Keller",
+		"date" : {"year": 1997,
+				  "month": "September"},
+		"tags" : [
+			"Cooking"
+		]
+	},
+	{
+		"isbn": 123456,
+		"title": "The French Laundry",
+		"Author": "Thomas Keller",
+		"date": {"year": 1997,
+				 "month": "September"},
+		"tags": [
+			"Cooking"
+		]
+	},{
+		"isbn" : 123456,
+		"title" : "The French Laundry",
+		"Author" : "Thomas Keller",
+		"date" : {"year": 1997,
+				  "month": "September"},
+		"tags" : [
+			"Cooking"
+		]
+	},{
+		"isbn" : 123456,
+		"title" : "The French Laundry",
+		"Author" : "Thomas Keller",
+		"date" : {"year": 1997,
+				  "month": "September"},
+		"tags" : [
+			"Cooking"
+		]
+	},{
+		"isbn" : 123456,
+		"title" : "The French Laundry",
+		"Author" : "Thomas Keller",
+		"date" : {"year": 1997,
+				  "month": "September"},
+		"tags" : [
+			"Cooking"
+		]
+	},
+])
 for books in collection.find():
 	print(books)

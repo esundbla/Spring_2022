@@ -7,7 +7,7 @@
 		"pessimist",
 		"optimist"
 	]
-}
+},
 
 {
 	"author" : "Sam Mai Tai",
@@ -18,7 +18,7 @@
 		"age",
 		"optimist"
 	]
-}
+},
 
 {
 	"author" : "Sam Mai Tai",
@@ -28,7 +28,7 @@
 	"tags" : [
 		"optimist"
 	]
-}
+},
 
 {
 	"author" : "Morbid Mojito",
@@ -37,7 +37,7 @@
 	"tags" : [
 		"life"
 	]
-}
+},
 
 {
 	"author" : "Morbid Mojito",
@@ -48,13 +48,12 @@
 		"life",
 		"optimist"
 	]
-}
+},
 
 // open database 
 use blog;
 
 // list all posts 
-
 
 // list all posts from 'Sam Mai Tai'
 

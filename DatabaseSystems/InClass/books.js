@@ -1,16 +1,7 @@
-from pymongo import MongoClient
+use books
 
-
-
-connectionString="mongodb+srv://sinbad:SunWood4117@cluster0.tz6ko.mongodb.net/books?retryWrites=true&w=majority"
-#C_string_2 = "mongodb+srv://sinbad:SunWood4117@cluster0.tz6ko.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-cluster = MongoClient(connectionString)
-db = cluster["books"]
-collection = db["books"]
-
-"""
-collection.insert_many([
-	{
+db.books.insertMany([
+    {
 		"isbn" : 978157965,
 		"title" : "The French Laundry",
 		"Author" : "Thomas Keller",
@@ -60,31 +51,18 @@ collection.insert_many([
 			"Sci-fi"
 		]
 	},
-])"""
+])
 
-for books in collection.find():
-	print(books)
+db.books.find()
 
-print('*'*15)
+db.books.find( {'title': {"$regex": ".*"}}, {'title': 1, '_id': 0})
 
-for books in collection.find( {'title': {"$regex": ".*"}}, {'title': 1, '_id': 0}):
-	print(books)
+db.books.find({'Author' : 'Thomas Keller'},
+		{'title':1, "_id":0, "Author":1})
 
-print('*'*15)
+db.books.find({'date.year':2004},
+		{'title':1, "_id":0, "date.year":1})
 
-for books in collection.find({'Author' : 'Thomas Keller'},
-		{'title':1, "_id":0, "Author":1}):
-	print(books)
-
-print('*'*15)
-
-for books in collection.find({'date.year':2004},
-		{'title':1, "_id":0, "date.year":1}):
-	print(books)
-
-print('*'*15)
-
-for books in collection.find({'$and': [
+db.books.find({'$and': [
 		{'pages':{'$gte':100}}, {'pages':{"$lte":500}}]},
-		{'title':1, "_id":0, "pages":1}):
-	print(books)
+		{'title':1, "_id":0, "pages":1})

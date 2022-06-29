@@ -1,0 +1,256 @@
+db.surveys.insertMany(
+    [
+        {
+            _id: 1234, 
+            title: 'Employee Engagement', 
+            sections: [
+                {
+                    number: 1, 
+                    title: 'Employee Information', 
+                    questions: [
+                        {
+                            number: 1, 
+                            text: 'What is your job role?',
+                            options: [
+                                'upper-level manager',
+                                'lower-level manager', 
+                                'team member',
+                                'intern',
+                                'other'   
+                            ]
+                        }, 
+                        {
+                            number: 2, 
+                            text: 'What department do you work in?',
+                            options: [
+                                'information technology', 
+                                'human-resources', 
+                                'sales', 
+                                'marketing', 
+                                'logistics', 
+                                'other'
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    number: 2,
+                    title: 'Career Development',
+                    questions: [
+                        {
+                            number: 1, 
+                            text: 'I am satisfied with my opportunities for professional growth', 
+                            options: [
+                                'strongly agree', 
+                                'agree', 
+                                'neutral', 
+                                'disagree', 
+                                'strongly disagree'
+                            ]
+                        }, 
+                        {
+                            number: 2, 
+                            text: 'I am satisfied with the investment my organization makes in training and education',
+                            options: [
+                                'strongly agree', 
+                                'agree', 
+                                'neutral', 
+                                'disagree', 
+                                'strongly disagree'
+                            ]
+                        }, 
+                        {
+                            number: 3, 
+                            text: 'I am satisfied that I have the opportunities to apply my talents and expertise',
+                            options: [
+                                'strongly agree', 
+                                'agree', 
+                                'neutral', 
+                                'disagree', 
+                                'strongly disagree'
+                            ]
+                        }
+                    ]
+                }
+            ], 
+            answers: [
+                {
+                    seq: 1, 
+                    date_time: '2022-05-03 10:35',
+                    values: [
+                        {
+                            section: 1, 
+                            question: 1, 
+                            answer: 'intern'
+                        },
+                        {
+                            section: 1, 
+                            question: 2, 
+                            answer: 'information technology'
+                        }, 
+                        {
+                            section: 2, 
+                            question: 1, 
+                            answer: 'neutral'
+                        },
+                        {
+                            section: 2, 
+                            question: 2, 
+                            answer: 'neutral'
+                        },
+                        {
+                            section: 2, 
+                            question: 3, 
+                            answer: 'neutral'
+                        }
+                    ]
+                },
+                {
+                    seq: 2, 
+                    date_time: '2022-05-03 12:11',
+                    values: [
+                        {
+                            section: 1, 
+                            question: 1, 
+                            answer: 'upper-level management'
+                        },
+                        {
+                            section: 1, 
+                            question: 2, 
+                            answer: 'information technology'
+                        }, 
+                        {
+                            section: 2, 
+                            question: 1, 
+                            answer: 'strongly agree'
+                        },
+                        {
+                            section: 2, 
+                            question: 2, 
+                            answer: 'strongly agree'
+                        },
+                        {
+                            section: 2, 
+                            question: 3, 
+                            answer: 'neutral'
+                        }
+                    ]
+                }, 
+                {
+                    seq: 3, 
+                    date_time: '2022-05-04 17:35',
+                    values: [
+                        {
+                            section: 1, 
+                            question: 1, 
+                            answer: 'team member'
+                        },
+                        {
+                            section: 1, 
+                            question: 2, 
+                            answer: 'human resources'
+                        }, 
+                        {
+                            section: 2, 
+                            question: 1, 
+                            answer: 'agree'
+                        },
+                        {
+                            section: 2, 
+                            question: 2, 
+                            answer: 'agree'
+                        },
+                        {
+                            section: 2, 
+                            question: 3, 
+                            answer: 'strongly agree'
+                        }
+                    ]
+                }, 
+                {
+                    seq: 4, 
+                    date_time: '2022-05-03 10:35',
+                    values: [
+                        {
+                            section: 1, 
+                            question: 1, 
+                            answer: 'other'
+                        },
+                        {
+                            section: 1, 
+                            question: 2, 
+                            answer: 'information technology'
+                        }, 
+                        {
+                            section: 2, 
+                            question: 1, 
+                            answer: 'neutral'
+                        },
+                        {
+                            section: 2, 
+                            question: 2, 
+                            answer: 'neutral'
+                        },
+                        {
+                            section: 2, 
+                            question: 3, 
+                            answer: 'neutral'
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+)
+
+db.surveys.aggregate([
+    {
+        $unwind: '$sections'
+    }, 
+    {
+        $group: {
+            _id: '$_id',
+            number_sections: {
+                $sum: 1
+            }
+        }
+    }
+])
+
+db.surveys.aggregate([
+    {
+        $unwind: '$answers'
+    }, 
+    {
+        $unwind: '$answers.values'
+    }, 
+    {
+        $match: {
+            _id: 1234, 
+            'answers.values.section': 1, 
+            'answers.values.question': 2
+        }
+    }, 
+    {
+        $group: {
+            _id: null, 
+            answers: {
+                '$push': '$answers.values.answer'
+            }
+        }
+    }
+])
+
+db.surveys.aggregate([
+    {
+        $unwind: '$answers'
+    }, 
+    {
+        $group: {
+            _id: '$_id',
+            x: {
+                $sum: 1
+            }
+        }
+    }
+])
